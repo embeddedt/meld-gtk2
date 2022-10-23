@@ -14,7 +14,7 @@ BROWSER := firefox
 .PHONY:all
 all: $(addsuffix .install,$(SPECIALS)) meld.desktop meld.xml
 	$(MAKE) -C po
-	$(MAKE) -C help
+#	$(MAKE) -C help
 	chmod 0755 bin/meld.install
 
 .PHONY:clean
@@ -25,7 +25,7 @@ clean:
 	@rm -f data/meld.desktop
 	@rm -f data/mime/meld.xml
 	$(MAKE) -C po clean
-	$(MAKE) -C help clean
+#	$(MAKE) -C help clean
 
 .PHONY:install
 install: $(addsuffix .install,$(SPECIALS)) meld.desktop meld.xml
@@ -95,7 +95,7 @@ install: $(addsuffix .install,$(SPECIALS)) meld.desktop meld.xml
 	install -m 644 data/icons/HighContrast/scalable/apps/meld.svg \
 		$(DESTDIR)$(sharedir)/icons/HighContrast/scalable/apps/meld.svg
 	$(MAKE) -C po install
-	$(MAKE) -C help install
+#	$(MAKE) -C help install
 	$(update_mime_database)
 	$(update_desktop_database)
 
@@ -137,7 +137,7 @@ uninstall:
 		$(sharedir)/mime/packages/meld.xml \
 		$(sharedir)/pixmaps/meld.png
 	$(MAKE) -C po uninstall
-	$(MAKE) -C help uninstall
+#	$(MAKE) -C help uninstall
 	$(update_mime_database)
 	$(update_desktop_database)
 
